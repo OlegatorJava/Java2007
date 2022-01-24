@@ -10,7 +10,7 @@ public class Plate {
         allPlate = this.food;
     }
     public boolean decreaseFood(int n) {
-        if((food - n) >= 0) {
+        if(food > n) {
             food -= n;
             return true;
         }else{
