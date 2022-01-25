@@ -4,28 +4,31 @@ public class Dog extends Animals {
     private final int DISTANCE_RUN = 500;
     private final int DISTANCE_SWIM = 10;
 
-    public Dog(boolean run, boolean swimming) {
-        super(run, swimming);
+    public Dog(String name, boolean run, boolean swimming) {
+        super(name, run, swimming);
 
     }
 
+
+    @Override
     void running(int distance) {
-        if (distance < DISTANCE_RUN) {
-            System.out.println("Собака пробежала " + distance + "м");
+        if (run == true && distance < DISTANCE_RUN) {
+            System.out.println(name + " пробежала " + distance + "м");
+        } else if (run == false) {
+            System.out.println(name + " не может бежать");
         } else {
-            System.out.println("Собака не может пробежать больше "+DISTANCE_RUN+"м");
-        }
-    }
-    void swimming(int distance){
-        if(distance<DISTANCE_SWIM){
-            System.out.println("Собака проплыла " + distance +"м");
-        }else{
-            System.out.println("Собака не может проплыть больше "+DISTANCE_SWIM+"м");
+            System.out.println(name + " не может пробежать больше " + DISTANCE_RUN + "м");
         }
     }
 
-
-
+    @Override
+    void swimming(int distance) {
+        if (distance < DISTANCE_SWIM) {
+            System.out.println(name + " проплыл " + distance + "м");
+        } else {
+            System.out.println(name + " не может проплыть больше " + DISTANCE_SWIM + "м");
+        }
+    }
 }
 
 
