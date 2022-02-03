@@ -18,33 +18,29 @@ public class HomeWork8 extends JFrame {
         JLabel counterValueView = new JLabel();
         counterValueView.setFont(font);
         counterValueView.setHorizontalAlignment(SwingConstants.CENTER);
-        counterValueView.setBounds(200,0,100,100);
-        add(counterValueView);
 
         value = initialValue;
         counterValueView.setText(String.valueOf(value));
 
-        setLayout(null);
-
         JButton decrementButton = new JButton("<");
         decrementButton.setFont(font);
-        decrementButton.setBounds(100,0,100,100);
-        add(decrementButton);
 
         JButton decrementButton10 = new JButton("<<");
         decrementButton10.setFont(font);
-        decrementButton10.setBounds(0,0,100,100);
-        add(decrementButton10);
 
         JButton incrementButton = new JButton(">");
         incrementButton.setFont(font);
-        incrementButton.setBounds(300,0,100,100);
-        add(incrementButton);
 
         JButton incrementButton10 = new JButton(">>");
         incrementButton10.setFont(font);
-        incrementButton10.setBounds(400,0,100,100);
+
+        setLayout(new GridLayout(1, 5));
+        add(decrementButton10);
+        add(decrementButton);
+        add(counterValueView);
+        add(incrementButton);
         add(incrementButton10);
+
 
         decrementButton.addActionListener(new ActionListener() {
             @Override
@@ -80,6 +76,7 @@ public class HomeWork8 extends JFrame {
 
 
         setVisible(true);
+
     }
 
 
@@ -87,5 +84,7 @@ public class HomeWork8 extends JFrame {
     public static void main(String[] args) {
         new HomeWork8(0);
     }
+
+
 
 }
